@@ -1,9 +1,9 @@
 import { encode } from '@api3/airnode-abi';
 import { ethers } from 'ethers';
 
-import { AirnodeAddress, endpointId, decodedParameters, TemplateID} from './TwelveData.js';
-import {newChangeAirnode, newChangeEndpoint, newChangedecodedParameters, NewChangeTemplateID} from './NewChangeFX.js';
-import {dxFeedAirnode, dxFeedEndpoint, dxFeeddecodedParameters, dxFeedTemplateID} from './dxFeed.js';
+import { AirnodeAddress, endpointId, decodedParameters, TemplateID} from './PriceFeeds/TwelveData.js';
+import {newChangeAirnode, newChangeEndpoint, newChangedecodedParameters, NewChangeTemplateID} from './PriceFeeds/NewChangeFX.js';
+import {dxFeedAirnode, dxFeedEndpoint, dxFeeddecodedParameters, dxFeedTemplateID} from './PriceFeeds/dxFeed.js';
 
 
 function generateIds(decodedParameters, endpointId, AirnodeAddress) {
