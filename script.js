@@ -27,14 +27,23 @@ function generateIds(decodedParameters, endpointId, AirnodeAddress) {
 const ids = generateIds(decodedParameters, endpointId, AirnodeAddress);
 console.log("Twelve Data template ID:", ids.templateId);
 console.log("Twelve Data Beacon ID:", ids.beaconId);
+if(ids.templateId === TemplateID){
+    console.log("**Template ID Matches**");
+}
 
 const NewChangeID = generateIds(newChangedecodedParameters, newChangeEndpoint, newChangeAirnode);
 console.log('New Change template ID:', NewChangeID.templateId);
 console.log('New Change Beacon ID:', NewChangeID.beaconId);
+if(NewChangeID.templateId === NewChangeTemplateID){
+    console.log("**Template ID Matches**");
+}
 
 const dxFeedID = generateIds(dxFeeddecodedParameters, dxFeedEndpoint, dxFeedAirnode);
 console.log("dxFeed template ID:", dxFeedID.templateId);
 console.log("dxFeed Beacon ID:", dxFeedID.beaconId);
+if(dxFeedID.templateId === dxFeedTemplateID){
+    console.log("**Template ID Matches**");
+}
 
 
 //Verify Beacon Set:
