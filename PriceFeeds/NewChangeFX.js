@@ -23,4 +23,4 @@ export const newChangedecodedParameters = [
   }
 ];
 
- export const NewChangeTemplateID = '0x2f2da1442b0c564f939d639fe08fb9e2ad79e2c25462bb8970f6fbe0c167f785';
+ export const newChangeTemplateID = '0x2f2da1442b0c564f939d639fe08fb9e2ad79e2c25462bb8970f6fbe0c167f785';
