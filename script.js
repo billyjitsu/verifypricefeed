@@ -29,56 +29,56 @@ function generateIds(decodedParameters, endpointId, AirnodeAddress) {
 
 // Usage
 const TwelveDataID = generateIds(twelveDataDecodedParameters, twelveDataEndpointId, twelveDataAirnodeAddress);
-console.log("Twelve Data template ID:", TwelveDataID.templateId);
-console.log("Twelve Data Beacon ID:", TwelveDataID.beaconId);
-if(TwelveDataID.templateId === twelveDataTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("Twelve Data template ID:", TwelveDataID.templateId);
+  console.log("Twelve Data Beacon ID:", TwelveDataID.beaconId);
+  if(TwelveDataID.templateId === twelveDataTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const NewChangeID = generateIds(newChangedecodedParameters, newChangeEndpoint, newChangeAirnode);
-console.log('New Change template ID:', NewChangeID.templateId);
-console.log('New Change Beacon ID:', NewChangeID.beaconId);
-if(NewChangeID.templateId === newChangeTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log('New Change template ID:', NewChangeID.templateId);
+  console.log('New Change Beacon ID:', NewChangeID.beaconId);
+  if(NewChangeID.templateId === newChangeTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const dxFeedID = generateIds(dxFeeddecodedParameters, dxFeedEndpoint, dxFeedAirnode);
-console.log("dxFeed template ID:", dxFeedID.templateId);
-console.log("dxFeed Beacon ID:", dxFeedID.beaconId);
-if(dxFeedID.templateId === dxFeedTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("dxFeed template ID:", dxFeedID.templateId);
+  console.log("dxFeed Beacon ID:", dxFeedID.beaconId);
+  if(dxFeedID.templateId === dxFeedTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const kaikoID = generateIds(kaikoDecodedParameters, kaikoEndpointId, kaikoAirnodeAddress);
-console.log("Kaiko template ID:", kaikoID.templateId);
-console.log("Kaiko Beacon ID:", kaikoID.beaconId);
-if(kaikoID.templateId === kaikoTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("Kaiko template ID:", kaikoID.templateId);
+  console.log("Kaiko Beacon ID:", kaikoID.beaconId);
+  if(kaikoID.templateId === kaikoTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const nodaryID = generateIds(nodaryDecodedParameters, nodaryEndpointId, nodaryAirnodeAddress);
-console.log("Nodary template ID:", nodaryID.templateId);
-console.log("Nodary Beacon ID:", nodaryID.beaconId);
-if(nodaryID.templateId === nodaryTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("Nodary template ID:", nodaryID.templateId);
+  console.log("Nodary Beacon ID:", nodaryID.beaconId);
+  if(nodaryID.templateId === nodaryTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const finageID = generateIds(finageDecodedParameters, finageEndpointId, finageAirnodeAddress);
-console.log("Finage template ID:", finageID.templateId);
-console.log("Finage Beacon ID:", finageID.beaconId);
-if(finageID.templateId === finageTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("Finage template ID:", finageID.templateId);
+  console.log("Finage Beacon ID:", finageID.beaconId);
+  if(finageID.templateId === finageTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 const coinpaprikaID = generateIds(coinpaprikaDecodedParameters, coinpaprikaEndpointId, coinpaprikaAirnodeAddress);
-console.log("Coinpaprika template ID:", coinpaprikaID.templateId);
-console.log("Coinpaprika Beacon ID:", coinpaprikaID.beaconId);
-if(coinpaprikaID.templateId === coinpaprikaTemplateID){
-    console.log("**Template ID Matches**");
-}
+  // console.log("Coinpaprika template ID:", coinpaprikaID.templateId);
+  console.log("Coinpaprika Beacon ID:", coinpaprikaID.beaconId);
+  if(coinpaprikaID.templateId === coinpaprikaTemplateID){
+      console.log("**Template ID Matches**");
+  }
 
 
 //Verify Beacon Set:
 const beaconSetId = ethers.utils.keccak256(
     ethers.utils.defaultAbiCoder.encode(['bytes32[]'],[[TwelveDataID.beaconId, NewChangeID.beaconId, dxFeedID.beaconId, kaikoID.beaconId, nodaryID.beaconId, finageID.beaconId, coinpaprikaID.beaconId]]));
-console.log("BeasonSet:", beaconSetId);
+console.log("BeaconSet:", beaconSetId);
