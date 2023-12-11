@@ -9,8 +9,6 @@ import { nodaryAirnodeAddress, nodaryEndpointId, nodaryDecodedParameters, nodary
 import { finageAirnodeAddress, finageEndpointId, finageDecodedParameters, finageTemplateID } from './PriceFeeds/Finage.js';
 import { coinpaprikaAirnodeAddress, coinpaprikaEndpointId, coinpaprikaDecodedParameters, coinpaprikaTemplateID } from './PriceFeeds/Coinpaprika.js';
 
-import { twelvedataBeacon, newchangeBeacon, dxfeedBeacon, kaikoBeacon, nodaryBeacon, finageBeacon, coinpaprikaBeacon } from './PriceFeeds/beaconid.js';
-
 
 function generateIds(decodedParameters, endpointId, AirnodeAddress) {
   const encodedParameters = encode(decodedParameters);
@@ -36,18 +34,12 @@ const TwelveDataID = generateIds(twelveDataDecodedParameters, twelveDataEndpoint
   if(TwelveDataID.templateId === twelveDataTemplateID){
       console.log("**Template ID Matches**");
   }
-  if(TwelveDataID.beaconId === twelvedataBeacon){
-      console.log("**Beacon ID Matches**");
-  }
 
 const NewChangeID = generateIds(newChangedecodedParameters, newChangeEndpoint, newChangeAirnode);
   // console.log('New Change template ID:', NewChangeID.templateId);
   console.log('New Change Beacon ID:', NewChangeID.beaconId);
   if(NewChangeID.templateId === newChangeTemplateID){
       console.log("**Template ID Matches**");
-  }
-  if(NewChangeID.beaconId === newchangeBeacon){
-      console.log("**Beacon ID Matches**");
   }
 
 const dxFeedID = generateIds(dxFeeddecodedParameters, dxFeedEndpoint, dxFeedAirnode);
@@ -56,18 +48,12 @@ const dxFeedID = generateIds(dxFeeddecodedParameters, dxFeedEndpoint, dxFeedAirn
   if(dxFeedID.templateId === dxFeedTemplateID){
       console.log("**Template ID Matches**");
   }
-  if(dxFeedID.beaconId === dxfeedBeacon){
-      console.log("**Beacon ID Matches**");
-  }
 
 const kaikoID = generateIds(kaikoDecodedParameters, kaikoEndpointId, kaikoAirnodeAddress);
   // console.log("Kaiko template ID:", kaikoID.templateId);
   console.log("Kaiko Beacon ID:", kaikoID.beaconId);
   if(kaikoID.templateId === kaikoTemplateID){
       console.log("**Template ID Matches**");
-  }
-  if(kaikoID.beaconId === kaikoBeacon){
-      console.log("**Beacon ID Matches**");
   }
 
 const nodaryID = generateIds(nodaryDecodedParameters, nodaryEndpointId, nodaryAirnodeAddress);
@@ -76,9 +62,6 @@ const nodaryID = generateIds(nodaryDecodedParameters, nodaryEndpointId, nodaryAi
   if(nodaryID.templateId === nodaryTemplateID){
       console.log("**Template ID Matches**");
   }
-  if(nodaryID.beaconId === nodaryBeacon){
-      console.log("**Beacon ID Matches**");
-  }
 
 const finageID = generateIds(finageDecodedParameters, finageEndpointId, finageAirnodeAddress);
   // console.log("Finage template ID:", finageID.templateId);
@@ -86,18 +69,12 @@ const finageID = generateIds(finageDecodedParameters, finageEndpointId, finageAi
   if(finageID.templateId === finageTemplateID){
       console.log("**Template ID Matches**");
   }
-  if(finageID.beaconId === finageBeacon){
-      console.log("**Beacon ID Matches**");
-  }
 
 const coinpaprikaID = generateIds(coinpaprikaDecodedParameters, coinpaprikaEndpointId, coinpaprikaAirnodeAddress);
   // console.log("Coinpaprika template ID:", coinpaprikaID.templateId);
   console.log("Coinpaprika Beacon ID:", coinpaprikaID.beaconId);
   if(coinpaprikaID.templateId === coinpaprikaTemplateID){
       console.log("**Template ID Matches**");
-  }
-  if(coinpaprikaID.beaconId === coinpaprikaBeacon){
-      console.log("**Beacon ID Matches**");
   }
 
 const beaconIds = [
@@ -110,7 +87,7 @@ const beaconIds = [
     coinpaprikaID.beaconId
 ];
 
-  // Sort the beacon IDs
+  // Sort the beacon IDs in ascending order of their hex values
   beaconIds.sort((a, b) => {
     const bigA = BigInt(a);
     const bigB = BigInt(b);
