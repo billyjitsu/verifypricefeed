@@ -1,0 +1,8 @@
+//Beacon Sets Specific to Gnosis ETH/USD Price Feeds
+export const twelvedataBeacon = '0x0feea87f05f208b2c427c3c4d5143272835a189a7e4a8b78086c7648a80c6155';
+export const newchangeBeacon = '0x7d5d6b3ad0e86921a69f3be2a307db686366eecadcb92993b970fc3e9e7a7425';
+export const dxfeedBeacon = '0x501003f675a19d22f1e128f2f27907d6b12f6e96f9401f605c1d3f5f0c0ee402';
+export const kaikoBeacon = '0x0af6cc48c57c9e648c33053394f709f89d27d3d57788f8e58caa20caf5534710';
+export const nodaryBeacon = '0x4385954e058fbe6b6a744f32a4f89d67aad099f8fb8b23e7ea8dd366ae88151d';
+export const finageBeacon = '0xa48fa64da97195547a264192121079a814ef12aef9b1b9cdbb5535e0ad6934c1';
+export const coinpaprikaBeacon = '0x8401a7b0d14f78d672f4b7759601d2cee9d1b7703232e02d53500a477417206f';
