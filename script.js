@@ -100,8 +100,30 @@ const coinpaprikaID = generateIds(coinpaprikaDecodedParameters, coinpaprikaEndpo
       console.log("**Beacon ID Matches**");
   }
 
+const beaconIds = [
+    TwelveDataID.beaconId,
+    NewChangeID.beaconId,
+    dxFeedID.beaconId,
+    kaikoID.beaconId,
+    nodaryID.beaconId,
+    finageID.beaconId,
+    coinpaprikaID.beaconId
+];
 
-//Verify Beacon Set:
+  // Sort the beacon IDs
+  beaconIds.sort((a, b) => {
+    const bigA = BigInt(a);
+    const bigB = BigInt(b);
+    if (bigA > bigB) return 1;
+    if (bigA < bigB) return -1;
+    return 0;
+  });
+
+// Now beaconIds array is sorted from smallest to largest in hex value
+console.log("Sorted Beacon IDs:", beaconIds);
+
+// Use the sorted array for beaconSetId
 const beaconSetId = ethers.utils.keccak256(
-    ethers.utils.defaultAbiCoder.encode(['bytes32[]'],[[TwelveDataID.beaconId, NewChangeID.beaconId, dxFeedID.beaconId, kaikoID.beaconId, nodaryID.beaconId, finageID.beaconId, coinpaprikaID.beaconId]]));
+  ethers.utils.defaultAbiCoder.encode(['bytes32[]'], [beaconIds])
+);
 console.log("BeaconSet:", beaconSetId);
