@@ -87,6 +87,7 @@ const beaconIds = [
     coinpaprikaID.beaconId
 ];
 
+if(beaconIds.length > 1){
   // Sort the beacon IDs in ascending order of their hex values
   beaconIds.sort((a, b) => {
     const bigA = BigInt(a);
@@ -96,11 +97,14 @@ const beaconIds = [
     return 0;
   });
 
-// Now beaconIds array is sorted from smallest to largest in hex value
-console.log("Sorted Beacon IDs:", beaconIds);
+  // Now beaconIds array is sorted from smallest to largest in hex value
+  console.log("Sorted Beacon IDs:", beaconIds);
 
-// Use the sorted array for beaconSetId
-const beaconSetId = ethers.utils.keccak256(
-  ethers.utils.defaultAbiCoder.encode(['bytes32[]'], [beaconIds])
-);
-console.log("BeaconSet:", beaconSetId);
+  // Use the sorted array for beaconSetId
+  const beaconSetId = ethers.utils.keccak256(
+    ethers.utils.defaultAbiCoder.encode(['bytes32[]'], [beaconIds])
+  );
+  console.log("BeaconSet:", beaconSetId);
+} else {
+  console.log("BeaconSet:", beaconIds[0]);
+}
